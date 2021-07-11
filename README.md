@@ -6,7 +6,7 @@
 
 https://simonseo.github.io/my-nlp-journey/
 
-# My Blog
+# My NLP Journey
 
 
 _powered by [fastpages](https://github.com/fastai/fastpages)_
