@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Test Page",
-            "content": "toc: true layout: post description: A minimal example of using markdown with fastpages. categories: [markdown] title: A Test page written by myself — . Example Markdown Post .",
-            "url": "https://simonseo.github.io/my-nlp-journey/2021/07/11/test-page.html",
-            "relUrl": "/2021/07/11/test-page.html",
+            "title": "A Test page written by myself",
+            "content": "Example Markdown Post .",
+            "url": "https://simonseo.github.io/my-nlp-journey/markdown/2021/07/11/test-page.html",
+            "relUrl": "/markdown/2021/07/11/test-page.html",
             "date": " • Jul 11, 2021"
         }
         
