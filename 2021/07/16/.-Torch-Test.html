@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Title | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://simonseo.github.io/my-nlp-journey/2021/07/16/.-Torch-Test.html" />
+<meta property="og:url" content="https://simonseo.github.io/my-nlp-journey/2021/07/16/.-Torch-Test.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-16T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","url":"https://simonseo.github.io/my-nlp-journey/2021/07/16/.-Torch-Test.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://simonseo.github.io/my-nlp-journey/2021/07/16/.-Torch-Test.html"},"headline":"Title","dateModified":"2021-07-16T00:00:00-05:00","datePublished":"2021-07-16T00:00:00-05:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/my-nlp-journey/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://simonseo.github.io/my-nlp-journey/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/my-nlp-journey/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/my-nlp-journey/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/my-nlp-journey/about/">About Me</a><a class="page-link" href="/my-nlp-journey/search/">Search</a><a class="page-link" href="/my-nlp-journey/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-16T00:00:00-05:00" itemprop="datePublished">
+        Jul 16, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      11 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/simonseo/my-nlp-journey/tree/master/_notebooks/00. Torch Test.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/my-nlp-journey/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/simonseo/my-nlp-journey/master?filepath=_notebooks%2F00.+Torch+Test.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/my-nlp-journey/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/simonseo/my-nlp-journey/blob/master/_notebooks/00. Torch Test.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/my-nlp-journey/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/00. Torch Test.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://janakiev.com/blog/jupyter-virtual-envs/">Using Virtual Environments in Jupyter Notebook and Python</a></p>
+<p><a href="https://hithot.tistory.com/entry/%EC%A3%BC%ED%94%BC%ED%84%B0-Jupyter-Notebook-%EC%84%A4%EC%B9%98%ED%95%98%EC%97%AC-%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EB%A1%9C-%EC%84%9C%EB%B2%84-%EA%B4%80%EB%A6%AC-%EC%9A%B0%EB%B6%84%ED%88%AC?category=823577">주피터 (Jupyter Notebook) 설치하여 웹브라우저로 서버 관리 - 우분투</a></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">torchvision.transforms</span> <span class="kn">import</span> <span class="n">ToTensor</span><span class="p">,</span> <span class="n">Lambda</span><span class="p">,</span> <span class="n">Compose</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>tensor([[0.8888, 0.3437, 0.0741],
+        [0.2750, 0.4212, 0.5925],
+        [0.1469, 0.9967, 0.2159],
+        [0.2730, 0.4382, 0.2797],
+        [0.1739, 0.6737, 0.2798]])
+False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">training_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
+    <span class="n">root</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+    <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">(),</span>
+<span class="p">)</span>
+
+<span class="c1"># 공개 데이터셋에서 테스트 데이터를 내려받습니다.</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
+    <span class="n">root</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+    <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+
+<span class="c1"># 데이터로더를 생성합니다.</span>
+<span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">training_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+<span class="n">test_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+
+<span class="c1"># each X, y is a batch of {batch_size} datapoints</span>
+<span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">test_dataloader</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of X [N, C, H, W]: &quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of y: &quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Shape of X [N, C, H, W]:  torch.Size([64, 1, 28, 28])
+Shape of y:  torch.Size([64]) torch.int64
+Shape of X [N, C, H, W]:  torch.Size([64, 1, 28, 28])
+Shape of y:  torch.Size([64]) torch.int64
+Shape of X [N, C, H, W]:  torch.Size([64, 1, 28, 28])
+Shape of y:  torch.Size([64]) torch.int64
+Shape of X [N, C, H, W]:  torch.Size([64, 1, 28, 28])
+Shape of y:  torch.Size([64]) torch.int64
+Shape of X [N, C, H, W]:  torch.Size([64, 1, 28, 28])
+Shape of y:  torch.Size([64]) torch.int64
+Shape of X [N, C, H, W]:  torch.Size([64, 1, 28, 28])
+Shape of y:  torch.Size([64]) torch.int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using </span><span class="si">{}</span><span class="s2"> device&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+
+<span class="c1"># 모델을 정의합니다.</span>
+<span class="k">class</span> <span class="nc">NeuralNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear_relu_stack</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_relu_stack</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logits</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Using cpu device
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=784, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=512, out_features=10, bias=True)
+    (5): ReLU()
+  )
+)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">batch</span><span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="c1"># 예측 오류 계산</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+        <span class="c1"># 역전파</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">batch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">loss</span><span class="p">,</span> <span class="n">current</span> <span class="o">=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">batch</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;loss: </span><span class="si">{</span><span class="n">loss</span><span class="si">:</span><span class="s2">&gt;7f</span><span class="si">}</span><span class="s2">  [</span><span class="si">{</span><span class="n">current</span><span class="si">:</span><span class="s2">&gt;5d</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">size</span><span class="si">:</span><span class="s2">&gt;5d</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">test_loss</span><span class="p">,</span> <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>
+            <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+            <span class="n">test_loss</span> <span class="o">+=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">test_loss</span> <span class="o">/=</span> <span class="n">size</span>
+    <span class="n">correct</span> <span class="o">/=</span> <span class="n">size</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test Error: </span><span class="se">\n</span><span class="s2"> Accuracy: </span><span class="si">{</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">correct</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;0.1f</span><span class="si">}</span><span class="s2">%, Avg loss: </span><span class="si">{</span><span class="n">test_loss</span><span class="si">:</span><span class="s2">&gt;8f</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%capture</span> output
+<span class="c1"># Save, close tab, come back later. The output is now stored in the output variable:</span>
+<span class="c1"># output.show()</span>
+<span class="c1"># This will show all interim print results as well as the plain or rich output cell.</span>
+
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="se">\n</span><span class="s2">-------------------------------&quot;</span><span class="p">)</span>
+    <span class="n">train</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Epoch 2
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Epoch 3
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Epoch 4
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Epoch 5
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Done!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#47784;&#45944;-&#51200;&#51109;-&amp;-&#48520;&#47084;&#50724;&#44592;">&#47784;&#45944; &#51200;&#51109; &amp; &#48520;&#47084;&#50724;&#44592;<a class="anchor-link" href="#&#47784;&#45944;-&#51200;&#51109;-&amp;-&#48520;&#47084;&#50724;&#44592;"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s2">&quot;model.pth&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved PyTorch Model State to model.pth&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Saved PyTorch Model State to model.pth
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;model.pth&quot;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;All keys matched successfully&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;T-shirt/top&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Trouser&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Pullover&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dress&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Coat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Sandal&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Shirt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Sneaker&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Ankle boot&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">test_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">predicted</span><span class="p">,</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">classes</span><span class="p">[</span><span class="n">pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">0</span><span class="p">)],</span> <span class="n">classes</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Predicted: &quot;</span><span class="si">{</span><span class="n">predicted</span><span class="si">}</span><span class="s1">&quot;, Actual: &quot;</span><span class="si">{</span><span class="n">actual</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predicted: &#34;Sneaker&#34;, Actual: &#34;Ankle boot&#34;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">3</span><span class="o">+</span><span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">torch</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;AVG&#39;,
+ &#39;AggregationType&#39;,
+ &#39;AnyType&#39;,
+ &#39;Argument&#39;,
+ &#39;ArgumentSpec&#39;,
+ &#39;BFloat16Storage&#39;,
+ &#39;BFloat16Tensor&#39;,
+ &#39;BenchmarkConfig&#39;,
+ &#39;BenchmarkExecutionStats&#39;,
+ &#39;Block&#39;,
+ &#39;BoolStorage&#39;,
+ &#39;BoolTensor&#39;,
+ &#39;BoolType&#39;,
+ &#39;BufferDict&#39;,
+ &#39;ByteStorage&#39;,
+ &#39;ByteTensor&#39;,
+ &#39;CONV_BN_FUSION&#39;,
+ &#39;CallStack&#39;,
+ &#39;Capsule&#39;,
+ &#39;CharStorage&#39;,
+ &#39;CharTensor&#39;,
+ &#39;ClassType&#39;,
+ &#39;Code&#39;,
+ &#39;CompilationUnit&#39;,
+ &#39;CompleteArgumentSpec&#39;,
+ &#39;ComplexDoubleStorage&#39;,
+ &#39;ComplexFloatStorage&#39;,
+ &#39;ComplexType&#39;,
+ &#39;ConcreteModuleType&#39;,
+ &#39;ConcreteModuleTypeBuilder&#39;,
+ &#39;DeepCopyMemoTable&#39;,
+ &#39;DeviceObjType&#39;,
+ &#39;DictType&#39;,
+ &#39;DisableTorchFunction&#39;,
+ &#39;DoubleStorage&#39;,
+ &#39;DoubleTensor&#39;,
+ &#39;EnumType&#39;,
+ &#39;ErrorReport&#39;,
+ &#39;ExecutionPlan&#39;,
+ &#39;FUSE_ADD_RELU&#39;,
+ &#39;FatalError&#39;,
+ &#39;FileCheck&#39;,
+ &#39;FloatStorage&#39;,
+ &#39;FloatTensor&#39;,
+ &#39;FloatType&#39;,
+ &#39;FunctionSchema&#39;,
+ &#39;Future&#39;,
+ &#39;FutureType&#39;,
+ &#39;Generator&#39;,
+ &#39;Gradient&#39;,
+ &#39;Graph&#39;,
+ &#39;GraphExecutorState&#39;,
+ &#39;HOIST_CONV_PACKED_PARAMS&#39;,
+ &#39;HalfStorage&#39;,
+ &#39;HalfStorageBase&#39;,
+ &#39;HalfTensor&#39;,
+ &#39;INSERT_FOLD_PREPACK_OPS&#39;,
+ &#39;IODescriptor&#39;,
+ &#39;InferredType&#39;,
+ &#39;IntStorage&#39;,
+ &#39;IntTensor&#39;,
+ &#39;IntType&#39;,
+ &#39;InterfaceType&#39;,
+ &#39;JITException&#39;,
+ &#39;ListType&#39;,
+ &#39;LiteScriptModule&#39;,
+ &#39;LockingLogger&#39;,
+ &#39;LoggerBase&#39;,
+ &#39;LongStorage&#39;,
+ &#39;LongTensor&#39;,
+ &#39;MobileOptimizerType&#39;,
+ &#39;ModuleDict&#39;,
+ &#39;Node&#39;,
+ &#39;NoneType&#39;,
+ &#39;NoopLogger&#39;,
+ &#39;NumberType&#39;,
+ &#39;OptionalType&#39;,
+ &#39;ParameterDict&#39;,
+ &#39;PyObjectType&#39;,
+ &#39;PyTorchFileReader&#39;,
+ &#39;PyTorchFileWriter&#39;,
+ &#39;QInt32Storage&#39;,
+ &#39;QInt32StorageBase&#39;,
+ &#39;QInt8Storage&#39;,
+ &#39;QInt8StorageBase&#39;,
+ &#39;QUInt4x2Storage&#39;,
+ &#39;QUInt8Storage&#39;,
+ &#39;REMOVE_DROPOUT&#39;,
+ &#39;RRefType&#39;,
+ &#39;SUM&#39;,
+ &#39;ScriptClass&#39;,
+ &#39;ScriptFunction&#39;,
+ &#39;ScriptMethod&#39;,
+ &#39;ScriptModule&#39;,
+ &#39;ScriptObject&#39;,
+ &#39;Set&#39;,
+ &#39;ShortStorage&#39;,
+ &#39;ShortTensor&#39;,
+ &#39;Size&#39;,
+ &#39;StaticRuntime&#39;,
+ &#39;Storage&#39;,
+ &#39;Stream&#39;,
+ &#39;StreamObjType&#39;,
+ &#39;StringType&#39;,
+ &#39;TYPE_CHECKING&#39;,
+ &#39;Tensor&#39;,
+ &#39;TensorType&#39;,
+ &#39;ThroughputBenchmark&#39;,
+ &#39;TracingState&#39;,
+ &#39;TupleType&#39;,
+ &#39;Type&#39;,
+ &#39;USE_GLOBAL_DEPS&#39;,
+ &#39;USE_RTLD_GLOBAL_WITH_LIBTORCH&#39;,
+ &#39;Use&#39;,
+ &#39;Value&#39;,
+ &#39;_C&#39;,
+ &#39;_StorageBase&#39;,
+ &#39;_VF&#39;,
+ &#39;__all__&#39;,
+ &#39;__annotations__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__config__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__future__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__path__&#39;,
+ &#39;__spec__&#39;,
+ &#39;__version__&#39;,
+ &#39;_adaptive_avg_pool2d&#39;,
+ &#39;_add_batch_dim&#39;,
+ &#39;_add_relu&#39;,
+ &#39;_add_relu_&#39;,
+ &#39;_addmv_impl_&#39;,
+ &#39;_aminmax&#39;,
+ &#39;_amp_foreach_non_finite_check_and_unscale_&#39;,
+ &#39;_amp_update_scale&#39;,
+ &#39;_assert&#39;,
+ &#39;_autograd_functions&#39;,
+ &#39;_baddbmm_mkl_&#39;,
+ &#39;_batch_norm_impl_index&#39;,
+ &#39;_bmm&#39;,
+ &#39;_cast_Byte&#39;,
+ &#39;_cast_Char&#39;,
+ &#39;_cast_Double&#39;,
+ &#39;_cast_Float&#39;,
+ &#39;_cast_Half&#39;,
+ &#39;_cast_Int&#39;,
+ &#39;_cast_Long&#39;,
+ &#39;_cast_Short&#39;,
+ &#39;_cat&#39;,
+ &#39;_choose_qparams_per_tensor&#39;,
+ &#39;_classes&#39;,
+ &#39;_compute_linear_combination&#39;,
+ &#39;_conj&#39;,
+ &#39;_convolution&#39;,
+ &#39;_convolution_nogroup&#39;,
+ &#39;_copy_from&#39;,
+ &#39;_ctc_loss&#39;,
+ &#39;_cudnn_ctc_loss&#39;,
+ &#39;_cudnn_init_dropout_state&#39;,
+ &#39;_cudnn_rnn&#39;,
+ &#39;_cudnn_rnn_flatten_weight&#39;,
+ &#39;_cufft_clear_plan_cache&#39;,
+ &#39;_cufft_get_plan_cache_max_size&#39;,
+ &#39;_cufft_get_plan_cache_size&#39;,
+ &#39;_cufft_set_plan_cache_max_size&#39;,
+ &#39;_cummax_helper&#39;,
+ &#39;_cummin_helper&#39;,
+ &#39;_debug_has_internal_overlap&#39;,
+ &#39;_dim_arange&#39;,
+ &#39;_dirichlet_grad&#39;,
+ &#39;_embedding_bag&#39;,
+ &#39;_embedding_bag_forward_only&#39;,
+ &#39;_empty_affine_quantized&#39;,
+ &#39;_empty_per_channel_affine_quantized&#39;,
+ &#39;_euclidean_dist&#39;,
+ &#39;_fake_quantize_learnable_per_channel_affine&#39;,
+ &#39;_fake_quantize_learnable_per_tensor_affine&#39;,
+ &#39;_fft_c2c&#39;,
+ &#39;_fft_c2r&#39;,
+ &#39;_fft_r2c&#39;,
+ &#39;_foreach_abs&#39;,
+ &#39;_foreach_abs_&#39;,
+ &#39;_foreach_acos&#39;,
+ &#39;_foreach_acos_&#39;,
+ &#39;_foreach_add&#39;,
+ &#39;_foreach_add_&#39;,
+ &#39;_foreach_addcdiv&#39;,
+ &#39;_foreach_addcdiv_&#39;,
+ &#39;_foreach_addcmul&#39;,
+ &#39;_foreach_addcmul_&#39;,
+ &#39;_foreach_asin&#39;,
+ &#39;_foreach_asin_&#39;,
+ &#39;_foreach_atan&#39;,
+ &#39;_foreach_atan_&#39;,
+ &#39;_foreach_ceil&#39;,
+ &#39;_foreach_ceil_&#39;,
+ &#39;_foreach_cos&#39;,
+ &#39;_foreach_cos_&#39;,
+ &#39;_foreach_cosh&#39;,
+ &#39;_foreach_cosh_&#39;,
+ &#39;_foreach_div&#39;,
+ &#39;_foreach_div_&#39;,
+ &#39;_foreach_erf&#39;,
+ &#39;_foreach_erf_&#39;,
+ &#39;_foreach_erfc&#39;,
+ &#39;_foreach_erfc_&#39;,
+ &#39;_foreach_exp&#39;,
+ &#39;_foreach_exp_&#39;,
+ &#39;_foreach_expm1&#39;,
+ &#39;_foreach_expm1_&#39;,
+ &#39;_foreach_floor&#39;,
+ &#39;_foreach_floor_&#39;,
+ &#39;_foreach_frac&#39;,
+ &#39;_foreach_frac_&#39;,
+ &#39;_foreach_lgamma&#39;,
+ &#39;_foreach_lgamma_&#39;,
+ &#39;_foreach_log&#39;,
+ &#39;_foreach_log10&#39;,
+ &#39;_foreach_log10_&#39;,
+ &#39;_foreach_log1p&#39;,
+ &#39;_foreach_log1p_&#39;,
+ &#39;_foreach_log2&#39;,
+ &#39;_foreach_log2_&#39;,
+ &#39;_foreach_log_&#39;,
+ &#39;_foreach_maximum&#39;,
+ &#39;_foreach_minimum&#39;,
+ &#39;_foreach_mul&#39;,
+ &#39;_foreach_mul_&#39;,
+ &#39;_foreach_neg&#39;,
+ &#39;_foreach_neg_&#39;,
+ &#39;_foreach_reciprocal&#39;,
+ &#39;_foreach_reciprocal_&#39;,
+ &#39;_foreach_round&#39;,
+ &#39;_foreach_round_&#39;,
+ &#39;_foreach_sigmoid&#39;,
+ &#39;_foreach_sigmoid_&#39;,
+ &#39;_foreach_sin&#39;,
+ &#39;_foreach_sin_&#39;,
+ &#39;_foreach_sinh&#39;,
+ &#39;_foreach_sinh_&#39;,
+ &#39;_foreach_sqrt&#39;,
+ &#39;_foreach_sqrt_&#39;,
+ &#39;_foreach_sub&#39;,
+ &#39;_foreach_sub_&#39;,
+ &#39;_foreach_tan&#39;,
+ &#39;_foreach_tan_&#39;,
+ &#39;_foreach_tanh&#39;,
+ &#39;_foreach_tanh_&#39;,
+ &#39;_foreach_trunc&#39;,
+ &#39;_foreach_trunc_&#39;,
+ &#39;_foreach_zero_&#39;,
+ &#39;_fused_dropout&#39;,
+ &#39;_grid_sampler_2d_cpu_fallback&#39;,
+ &#39;_has_compatible_shallow_copy_type&#39;,
+ &#39;_import_dotted_name&#39;,
+ &#39;_index_copy_&#39;,
+ &#39;_index_put_impl_&#39;,
+ &#39;_initExtension&#39;,
+ &#39;_jit_internal&#39;,
+ &#39;_linalg_inv_out_helper_&#39;,
+ &#39;_linalg_qr_helper&#39;,
+ &#39;_linalg_solve_out_helper_&#39;,
+ &#39;_linalg_utils&#39;,
+ &#39;_load_global_deps&#39;,
+ &#39;_lobpcg&#39;,
+ &#39;_log_softmax&#39;,
+ &#39;_log_softmax_backward_data&#39;,
+ &#39;_logcumsumexp&#39;,
+ &#39;_lowrank&#39;,
+ &#39;_lu_solve_helper&#39;,
+ &#39;_lu_with_info&#39;,
+ &#39;_make_dual&#39;,
+ &#39;_make_per_channel_quantized_tensor&#39;,
+ &#39;_make_per_tensor_quantized_tensor&#39;,
+ &#39;_masked_scale&#39;,
+ &#39;_mkldnn&#39;,
+ &#39;_mkldnn_reshape&#39;,
+ &#39;_mkldnn_transpose&#39;,
+ &#39;_mkldnn_transpose_&#39;,
+ &#39;_mode&#39;,
+ &#39;_namedtensor_internals&#39;,
+ &#39;_nnpack_available&#39;,
+ &#39;_nnpack_spatial_convolution&#39;,
+ &#39;_ops&#39;,
+ &#39;_pack_padded_sequence&#39;,
+ &#39;_pad_packed_sequence&#39;,
+ &#39;_remove_batch_dim&#39;,
+ &#39;_reshape_from_tensor&#39;,
+ &#39;_rowwise_prune&#39;,
+ &#39;_s_where&#39;,
+ &#39;_sample_dirichlet&#39;,
+ &#39;_saturate_weight_to_fp16&#39;,
+ &#39;_shape_as_tensor&#39;,
+ &#39;_six&#39;,
+ &#39;_sobol_engine_draw&#39;,
+ &#39;_sobol_engine_ff_&#39;,
+ &#39;_sobol_engine_initialize_state_&#39;,
+ &#39;_sobol_engine_scramble_&#39;,
+ &#39;_softmax&#39;,
+ &#39;_softmax_backward_data&#39;,
+ &#39;_sparse_addmm&#39;,
+ &#39;_sparse_coo_tensor_unsafe&#39;,
+ &#39;_sparse_log_softmax&#39;,
+ &#39;_sparse_log_softmax_backward_data&#39;,
+ &#39;_sparse_matrix_mask_helper&#39;,
+ &#39;_sparse_mm&#39;,
+ &#39;_sparse_softmax&#39;,
+ &#39;_sparse_softmax_backward_data&#39;,
+ &#39;_sparse_sparse_matmul&#39;,
+ &#39;_sparse_sum&#39;,
+ &#39;_stack&#39;,
+ &#39;_standard_gamma&#39;,
+ &#39;_standard_gamma_grad&#39;,
+ &#39;_std&#39;,
+ &#39;_storage_classes&#39;,
+ &#39;_string_classes&#39;,
+ &#39;_syevd_helper&#39;,
+ &#39;_tensor_classes&#39;,
+ &#39;_tensor_str&#39;,
+ &#39;_test_serialization_subcmul&#39;,
+ &#39;_trilinear&#39;,
+ &#39;_unique&#39;,
+ &#39;_unique2&#39;,
+ &#39;_unpack_dual&#39;,
+ &#39;_use_cudnn_ctc_loss&#39;,
+ &#39;_use_cudnn_rnn_flatten_weight&#39;,
+ &#39;_utils&#39;,
+ &#39;_utils_internal&#39;,
+ &#39;_validate_sparse_coo_tensor_args&#39;,
+ &#39;_var&#39;,
+ &#39;_vmap_internals&#39;,
+ &#39;_weight_norm&#39;,
+ &#39;_weight_norm_cuda_interface&#39;,
+ &#39;abs&#39;,
+ &#39;abs_&#39;,
+ &#39;absolute&#39;,
+ &#39;acos&#39;,
+ &#39;acos_&#39;,
+ &#39;acosh&#39;,
+ &#39;acosh_&#39;,
+ &#39;adaptive_avg_pool1d&#39;,
+ &#39;adaptive_max_pool1d&#39;,
+ &#39;add&#39;,
+ &#39;addbmm&#39;,
+ &#39;addcdiv&#39;,
+ &#39;addcmul&#39;,
+ &#39;addmm&#39;,
+ &#39;addmv&#39;,
+ &#39;addmv_&#39;,
+ &#39;addr&#39;,
+ &#39;affine_grid_generator&#39;,
+ &#39;align_tensors&#39;,
+ &#39;all&#39;,
+ &#39;allclose&#39;,
+ &#39;alpha_dropout&#39;,
+ &#39;alpha_dropout_&#39;,
+ &#39;amax&#39;,
+ &#39;amin&#39;,
+ &#39;angle&#39;,
+ &#39;any&#39;,
+ &#39;arange&#39;,
+ &#39;arccos&#39;,
+ &#39;arccos_&#39;,
+ &#39;arccosh&#39;,
+ &#39;arccosh_&#39;,
+ &#39;arcsin&#39;,
+ &#39;arcsin_&#39;,
+ &#39;arcsinh&#39;,
+ &#39;arcsinh_&#39;,
+ &#39;arctan&#39;,
+ &#39;arctan_&#39;,
+ &#39;arctanh&#39;,
+ &#39;arctanh_&#39;,
+ &#39;are_deterministic_algorithms_enabled&#39;,
+ &#39;argmax&#39;,
+ &#39;argmin&#39;,
+ &#39;argsort&#39;,
+ &#39;as_strided&#39;,
+ &#39;as_strided_&#39;,
+ &#39;as_tensor&#39;,
+ &#39;asin&#39;,
+ &#39;asin_&#39;,
+ &#39;asinh&#39;,
+ &#39;asinh_&#39;,
+ &#39;atan&#39;,
+ &#39;atan2&#39;,
+ &#39;atan_&#39;,
+ &#39;atanh&#39;,
+ &#39;atanh_&#39;,
+ &#39;atleast_1d&#39;,
+ &#39;atleast_2d&#39;,
+ &#39;atleast_3d&#39;,
+ &#39;autocast_decrement_nesting&#39;,
+ &#39;autocast_increment_nesting&#39;,
+ &#39;autograd&#39;,
+ &#39;avg_pool1d&#39;,
+ &#39;backends&#39;,
+ &#39;baddbmm&#39;,
+ &#39;bartlett_window&#39;,
+ &#39;batch_norm&#39;,
+ &#39;batch_norm_backward_elemt&#39;,
+ &#39;batch_norm_backward_reduce&#39;,
+ &#39;batch_norm_elemt&#39;,
+ &#39;batch_norm_gather_stats&#39;,
+ &#39;batch_norm_gather_stats_with_counts&#39;,
+ &#39;batch_norm_stats&#39;,
+ &#39;batch_norm_update_stats&#39;,
+ &#39;bernoulli&#39;,
+ &#39;bfloat16&#39;,
+ &#39;bilinear&#39;,
+ &#39;binary_cross_entropy_with_logits&#39;,
+ &#39;bincount&#39;,
+ &#39;binomial&#39;,
+ &#39;bitwise_and&#39;,
+ &#39;bitwise_not&#39;,
+ &#39;bitwise_or&#39;,
+ &#39;bitwise_xor&#39;,
+ &#39;blackman_window&#39;,
+ &#39;block_diag&#39;,
+ &#39;bmm&#39;,
+ &#39;bool&#39;,
+ &#39;broadcast_shapes&#39;,
+ &#39;broadcast_tensors&#39;,
+ &#39;broadcast_to&#39;,
+ &#39;bucketize&#39;,
+ &#39;can_cast&#39;,
+ &#39;cartesian_prod&#39;,
+ &#39;cat&#39;,
+ &#39;cdist&#39;,
+ &#39;cdouble&#39;,
+ &#39;ceil&#39;,
+ &#39;ceil_&#39;,
+ &#39;celu&#39;,
+ &#39;celu_&#39;,
+ &#39;cfloat&#39;,
+ &#39;chain_matmul&#39;,
+ &#39;channel_shuffle&#39;,
+ &#39;channels_last&#39;,
+ &#39;channels_last_3d&#39;,
+ &#39;cholesky&#39;,
+ &#39;cholesky_inverse&#39;,
+ &#39;cholesky_solve&#39;,
+ &#39;choose_qparams_optimized&#39;,
+ &#39;chunk&#39;,
+ &#39;clamp&#39;,
+ &#39;clamp_&#39;,
+ &#39;clamp_max&#39;,
+ &#39;clamp_max_&#39;,
+ &#39;clamp_min&#39;,
+ &#39;clamp_min_&#39;,
+ &#39;classes&#39;,
+ &#39;clear_autocast_cache&#39;,
+ &#39;clip&#39;,
+ &#39;clip_&#39;,
+ &#39;clone&#39;,
+ &#39;column_stack&#39;,
+ &#39;combinations&#39;,
+ &#39;compiled_with_cxx11_abi&#39;,
+ &#39;complex&#39;,
+ &#39;complex128&#39;,
+ &#39;complex32&#39;,
+ &#39;complex64&#39;,
+ &#39;conj&#39;,
+ &#39;constant_pad_nd&#39;,
+ &#39;contiguous_format&#39;,
+ &#39;conv1d&#39;,
+ &#39;conv2d&#39;,
+ &#39;conv3d&#39;,
+ &#39;conv_tbc&#39;,
+ &#39;conv_transpose1d&#39;,
+ &#39;conv_transpose2d&#39;,
+ &#39;conv_transpose3d&#39;,
+ &#39;convolution&#39;,
+ &#39;copysign&#39;,
+ &#39;cos&#39;,
+ &#39;cos_&#39;,
+ &#39;cosh&#39;,
+ &#39;cosh_&#39;,
+ &#39;cosine_embedding_loss&#39;,
+ &#39;cosine_similarity&#39;,
+ &#39;count_nonzero&#39;,
+ &#39;cpp&#39;,
+ &#39;cross&#39;,
+ &#39;ctc_loss&#39;,
+ &#39;ctypes&#39;,
+ &#39;cuda&#39;,
+ &#39;cudnn_affine_grid_generator&#39;,
+ &#39;cudnn_batch_norm&#39;,
+ &#39;cudnn_convolution&#39;,
+ &#39;cudnn_convolution_transpose&#39;,
+ &#39;cudnn_grid_sampler&#39;,
+ &#39;cudnn_is_acceptable&#39;,
+ &#39;cummax&#39;,
+ &#39;cummin&#39;,
+ &#39;cumprod&#39;,
+ &#39;cumsum&#39;,
+ &#39;default_generator&#39;,
+ &#39;deg2rad&#39;,
+ &#39;deg2rad_&#39;,
+ &#39;dequantize&#39;,
+ &#39;det&#39;,
+ &#39;detach&#39;,
+ &#39;detach_&#39;,
+ &#39;device&#39;,
+ &#39;diag&#39;,
+ &#39;diag_embed&#39;,
+ &#39;diagflat&#39;,
+ &#39;diagonal&#39;,
+ &#39;diff&#39;,
+ &#39;digamma&#39;,
+ &#39;dist&#39;,
+ &#39;distributed&#39;,
+ &#39;distributions&#39;,
+ &#39;div&#39;,
+ &#39;divide&#39;,
+ &#39;dot&#39;,
+ &#39;double&#39;,
+ &#39;dropout&#39;,
+ &#39;dropout_&#39;,
+ &#39;dsmm&#39;,
+ &#39;dstack&#39;,
+ &#39;dtype&#39;,
+ &#39;eig&#39;,
+ &#39;einsum&#39;,
+ &#39;embedding&#39;,
+ &#39;embedding_bag&#39;,
+ &#39;embedding_renorm_&#39;,
+ &#39;empty&#39;,
+ &#39;empty_like&#39;,
+ &#39;empty_meta&#39;,
+ &#39;empty_quantized&#39;,
+ &#39;empty_strided&#39;,
+ &#39;enable_grad&#39;,
+ &#39;eq&#39;,
+ &#39;equal&#39;,
+ &#39;erf&#39;,
+ &#39;erf_&#39;,
+ &#39;erfc&#39;,
+ &#39;erfc_&#39;,
+ &#39;erfinv&#39;,
+ &#39;exp&#39;,
+ &#39;exp2&#39;,
+ &#39;exp2_&#39;,
+ &#39;exp_&#39;,
+ &#39;expm1&#39;,
+ &#39;expm1_&#39;,
+ &#39;eye&#39;,
+ &#39;fake_quantize_per_channel_affine&#39;,
+ &#39;fake_quantize_per_tensor_affine&#39;,
+ &#39;fbgemm_linear_fp16_weight&#39;,
+ &#39;fbgemm_linear_fp16_weight_fp32_activation&#39;,
+ &#39;fbgemm_linear_int8_weight&#39;,
+ &#39;fbgemm_linear_int8_weight_fp32_activation&#39;,
+ &#39;fbgemm_linear_quantize_weight&#39;,
+ &#39;fbgemm_pack_gemm_matrix_fp16&#39;,
+ &#39;fbgemm_pack_quantized_matrix&#39;,
+ &#39;feature_alpha_dropout&#39;,
+ &#39;feature_alpha_dropout_&#39;,
+ &#39;feature_dropout&#39;,
+ &#39;feature_dropout_&#39;,
+ &#39;fft&#39;,
+ &#39;fill_&#39;,
+ &#39;finfo&#39;,
+ &#39;fix&#39;,
+ &#39;fix_&#39;,
+ &#39;flatten&#39;,
+ &#39;flip&#39;,
+ &#39;fliplr&#39;,
+ &#39;flipud&#39;,
+ &#39;float&#39;,
+ &#39;float16&#39;,
+ &#39;float32&#39;,
+ &#39;float64&#39;,
+ &#39;float_power&#39;,
+ &#39;floor&#39;,
+ &#39;floor_&#39;,
+ &#39;floor_divide&#39;,
+ &#39;fmax&#39;,
+ &#39;fmin&#39;,
+ &#39;fmod&#39;,
+ &#39;fork&#39;,
+ &#39;frac&#39;,
+ &#39;frac_&#39;,
+ &#39;frobenius_norm&#39;,
+ &#39;from_file&#39;,
+ &#39;from_numpy&#39;,
+ &#39;full&#39;,
+ &#39;full_like&#39;,
+ &#39;functional&#39;,
+ &#39;futures&#39;,
+ &#39;gather&#39;,
+ &#39;gcd&#39;,
+ &#39;gcd_&#39;,
+ &#39;ge&#39;,
+ &#39;geqrf&#39;,
+ &#39;ger&#39;,
+ &#39;get_default_dtype&#39;,
+ &#39;get_device&#39;,
+ &#39;get_file_path&#39;,
+ &#39;get_num_interop_threads&#39;,
+ &#39;get_num_threads&#39;,
+ &#39;get_rng_state&#39;,
+ &#39;greater&#39;,
+ &#39;greater_equal&#39;,
+ &#39;grid_sampler&#39;,
+ &#39;grid_sampler_2d&#39;,
+ &#39;grid_sampler_3d&#39;,
+ &#39;group_norm&#39;,
+ &#39;gru&#39;,
+ &#39;gru_cell&#39;,
+ &#39;gt&#39;,
+ &#39;half&#39;,
+ &#39;hamming_window&#39;,
+ &#39;hann_window&#39;,
+ &#39;hardshrink&#39;,
+ &#39;has_cuda&#39;,
+ &#39;has_cudnn&#39;,
+ &#39;has_lapack&#39;,
+ &#39;has_mkl&#39;,
+ &#39;has_mkldnn&#39;,
+ &#39;has_openmp&#39;,
+ &#39;heaviside&#39;,
+ &#39;hinge_embedding_loss&#39;,
+ &#39;histc&#39;,
+ &#39;hsmm&#39;,
+ &#39;hspmm&#39;,
+ &#39;hstack&#39;,
+ &#39;hub&#39;,
+ &#39;hypot&#39;,
+ &#39;i0&#39;,
+ &#39;i0_&#39;,
+ &#39;igamma&#39;,
+ &#39;igammac&#39;,
+ &#39;iinfo&#39;,
+ &#39;imag&#39;,
+ &#39;import_ir_module&#39;,
+ &#39;import_ir_module_from_buffer&#39;,
+ &#39;index_add&#39;,
+ &#39;index_copy&#39;,
+ &#39;index_fill&#39;,
+ &#39;index_put&#39;,
+ &#39;index_put_&#39;,
+ &#39;index_select&#39;,
+ &#39;init_num_threads&#39;,
+ &#39;initial_seed&#39;,
+ &#39;inner&#39;,
+ &#39;instance_norm&#39;,
+ &#39;int&#39;,
+ &#39;int16&#39;,
+ &#39;int32&#39;,
+ &#39;int64&#39;,
+ &#39;int8&#39;,
+ &#39;int_repr&#39;,
+ &#39;inverse&#39;,
+ &#39;is_anomaly_enabled&#39;,
+ &#39;is_autocast_enabled&#39;,
+ &#39;is_complex&#39;,
+ &#39;is_deterministic&#39;,
+ &#39;is_distributed&#39;,
+ &#39;is_floating_point&#39;,
+ &#39;is_grad_enabled&#39;,
+ &#39;is_nonzero&#39;,
+ &#39;is_same_size&#39;,
+ &#39;is_signed&#39;,
+ &#39;is_storage&#39;,
+ &#39;is_tensor&#39;,
+ &#39;is_vulkan_available&#39;,
+ &#39;isclose&#39;,
+ &#39;isfinite&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;isneginf&#39;,
+ &#39;isposinf&#39;,
+ &#39;isreal&#39;,
+ &#39;istft&#39;,
+ &#39;jit&#39;,
+ &#39;kaiser_window&#39;,
+ &#39;kl_div&#39;,
+ &#39;kron&#39;,
+ &#39;kthvalue&#39;,
+ &#39;layer_norm&#39;,
+ &#39;layout&#39;,
+ &#39;lcm&#39;,
+ &#39;lcm_&#39;,
+ &#39;ldexp&#39;,
+ &#39;ldexp_&#39;,
+ &#39;le&#39;,
+ &#39;legacy_contiguous_format&#39;,
+ &#39;lerp&#39;,
+ &#39;less&#39;,
+ &#39;less_equal&#39;,
+ &#39;lgamma&#39;,
+ &#39;linalg&#39;,
+ &#39;linspace&#39;,
+ &#39;load&#39;,
+ &#39;lobpcg&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log10_&#39;,
+ &#39;log1p&#39;,
+ &#39;log1p_&#39;,
+ &#39;log2&#39;,
+ &#39;log2_&#39;,
+ &#39;log_&#39;,
+ &#39;log_softmax&#39;,
+ &#39;logaddexp&#39;,
+ &#39;logaddexp2&#39;,
+ &#39;logcumsumexp&#39;,
+ &#39;logdet&#39;,
+ &#39;logical_and&#39;,
+ &#39;logical_not&#39;,
+ &#39;logical_or&#39;,
+ &#39;logical_xor&#39;,
+ &#39;logit&#39;,
+ &#39;logit_&#39;,
+ &#39;logspace&#39;,
+ &#39;logsumexp&#39;,
+ &#39;long&#39;,
+ &#39;lstm&#39;,
+ &#39;lstm_cell&#39;,
+ &#39;lstsq&#39;,
+ &#39;lt&#39;,
+ &#39;lu&#39;,
+ &#39;lu_solve&#39;,
+ &#39;lu_unpack&#39;,
+ &#39;manual_seed&#39;,
+ &#39;margin_ranking_loss&#39;,
+ &#39;masked_fill&#39;,
+ &#39;masked_scatter&#39;,
+ &#39;masked_select&#39;,
+ &#39;matmul&#39;,
+ &#39;matrix_exp&#39;,
+ &#39;matrix_power&#39;,
+ &#39;matrix_rank&#39;,
+ &#39;max&#39;,
+ &#39;max_pool1d&#39;,
+ &#39;max_pool1d_with_indices&#39;,
+ &#39;max_pool2d&#39;,
+ &#39;max_pool3d&#39;,
+ &#39;maximum&#39;,
+ &#39;mean&#39;,
+ &#39;median&#39;,
+ &#39;memory_format&#39;,
+ &#39;merge_type_from_type_comment&#39;,
+ &#39;meshgrid&#39;,
+ &#39;min&#39;,
+ &#39;minimum&#39;,
+ &#39;miopen_batch_norm&#39;,
+ &#39;miopen_convolution&#39;,
+ &#39;miopen_convolution_transpose&#39;,
+ &#39;miopen_depthwise_convolution&#39;,
+ &#39;miopen_rnn&#39;,
+ &#39;mkldnn_adaptive_avg_pool2d&#39;,
+ &#39;mkldnn_convolution&#39;,
+ &#39;mkldnn_convolution_backward_weights&#39;,
+ &#39;mkldnn_linear_backward_weights&#39;,
+ &#39;mkldnn_max_pool2d&#39;,
+ &#39;mkldnn_max_pool3d&#39;,
+ &#39;mm&#39;,
+ &#39;mode&#39;,
+ &#39;moveaxis&#39;,
+ &#39;movedim&#39;,
+ &#39;msort&#39;,
+ &#39;mul&#39;,
+ &#39;multinomial&#39;,
+ &#39;multiply&#39;,
+ &#39;multiprocessing&#39;,
+ &#39;mv&#39;,
+ &#39;mvlgamma&#39;,
+ &#39;name&#39;,
+ &#39;nan_to_num&#39;,
+ &#39;nan_to_num_&#39;,
+ &#39;nanmedian&#39;,
+ &#39;nanquantile&#39;,
+ &#39;nansum&#39;,
+ &#39;narrow&#39;,
+ &#39;narrow_copy&#39;,
+ &#39;native_batch_norm&#39;,
+ &#39;native_group_norm&#39;,
+ &#39;native_layer_norm&#39;,
+ &#39;native_norm&#39;,
+ &#39;ne&#39;,
+ &#39;neg&#39;,
+ &#39;neg_&#39;,
+ &#39;negative&#39;,
+ &#39;negative_&#39;,
+ &#39;nextafter&#39;,
+ &#39;nn&#39;,
+ &#39;no_grad&#39;,
+ &#39;nonzero&#39;,
+ &#39;norm&#39;,
+ &#39;norm_except_dim&#39;,
+ &#39;normal&#39;,
+ &#39;not_equal&#39;,
+ &#39;nuclear_norm&#39;,
+ &#39;numel&#39;,
+ &#39;ones&#39;,
+ &#39;ones_like&#39;,
+ &#39;onnx&#39;,
+ &#39;ops&#39;,
+ &#39;optim&#39;,
+ &#39;orgqr&#39;,
+ &#39;ormqr&#39;,
+ &#39;os&#39;,
+ &#39;outer&#39;,
+ &#39;overrides&#39;,
+ &#39;pairwise_distance&#39;,
+ &#39;parse_ir&#39;,
+ &#39;parse_schema&#39;,
+ &#39;parse_type_comment&#39;,
+ &#39;pca_lowrank&#39;,
+ &#39;pdist&#39;,
+ &#39;per_channel_affine&#39;,
+ &#39;per_channel_affine_float_qparams&#39;,
+ &#39;per_channel_symmetric&#39;,
+ &#39;per_tensor_affine&#39;,
+ &#39;per_tensor_symmetric&#39;,
+ &#39;pinverse&#39;,
+ &#39;pixel_shuffle&#39;,
+ &#39;pixel_unshuffle&#39;,
+ &#39;platform&#39;,
+ &#39;poisson&#39;,
+ &#39;poisson_nll_loss&#39;,
+ &#39;polar&#39;,
+ &#39;polygamma&#39;,
+ &#39;pow&#39;,
+ &#39;prelu&#39;,
+ &#39;prepare_multiprocessing_environment&#39;,
+ &#39;preserve_format&#39;,
+ &#39;prod&#39;,
+ &#39;profiler&#39;,
+ &#39;promote_types&#39;,
+ &#39;q_per_channel_axis&#39;,
+ &#39;q_per_channel_scales&#39;,
+ &#39;q_per_channel_zero_points&#39;,
+ &#39;q_scale&#39;,
+ &#39;q_zero_point&#39;,
+ &#39;qint32&#39;,
+ &#39;qint8&#39;,
+ &#39;qr&#39;,
+ &#39;qscheme&#39;,
+ &#39;quantile&#39;,
+ &#39;quantization&#39;,
+ &#39;quantize_per_channel&#39;,
+ &#39;quantize_per_tensor&#39;,
+ &#39;quantized_batch_norm&#39;,
+ &#39;quantized_gru&#39;,
+ &#39;quantized_gru_cell&#39;,
+ &#39;quantized_lstm&#39;,
+ &#39;quantized_lstm_cell&#39;,
+ &#39;quantized_max_pool1d&#39;,
+ &#39;quantized_max_pool2d&#39;,
+ &#39;quantized_rnn_relu_cell&#39;,
+ &#39;quantized_rnn_tanh_cell&#39;,
+ &#39;quasirandom&#39;,
+ &#39;quint4x2&#39;,
+ &#39;quint8&#39;,
+ &#39;rad2deg&#39;,
+ &#39;rad2deg_&#39;,
+ &#39;rand&#39;,
+ &#39;rand_like&#39;,
+ &#39;randint&#39;,
+ &#39;randint_like&#39;,
+ &#39;randn&#39;,
+ &#39;randn_like&#39;,
+ &#39;random&#39;,
+ &#39;randperm&#39;,
+ &#39;range&#39;,
+ &#39;ravel&#39;,
+ &#39;real&#39;,
+ &#39;reciprocal&#39;,
+ &#39;reciprocal_&#39;,
+ &#39;relu&#39;,
+ &#39;relu_&#39;,
+ &#39;remainder&#39;,
+ &#39;renorm&#39;,
+ &#39;repeat_interleave&#39;,
+ &#39;reshape&#39;,
+ &#39;resize_as_&#39;,
+ &#39;result_type&#39;,
+ &#39;rnn_relu&#39;,
+ &#39;rnn_relu_cell&#39;,
+ &#39;rnn_tanh&#39;,
+ &#39;rnn_tanh_cell&#39;,
+ &#39;roll&#39;,
+ &#39;rot90&#39;,
+ &#39;round&#39;,
+ &#39;round_&#39;,
+ &#39;row_stack&#39;,
+ &#39;rrelu&#39;,
+ &#39;rrelu_&#39;,
+ &#39;rsqrt&#39;,
+ &#39;rsqrt_&#39;,
+ &#39;rsub&#39;,
+ &#39;saddmm&#39;,
+ &#39;save&#39;,
+ &#39;scalar_tensor&#39;,
+ &#39;scatter&#39;,
+ &#39;scatter_add&#39;,
+ &#39;searchsorted&#39;,
+ &#39;seed&#39;,
+ &#39;select&#39;,
+ &#39;selu&#39;,
+ &#39;selu_&#39;,
+ &#39;serialization&#39;,
+ &#39;set_anomaly_enabled&#39;,
+ &#39;set_autocast_enabled&#39;,
+ &#39;set_default_dtype&#39;,
+ &#39;set_default_tensor_type&#39;,
+ &#39;set_deterministic&#39;,
+ &#39;set_flush_denormal&#39;,
+ &#39;set_grad_enabled&#39;,
+ &#39;set_num_interop_threads&#39;,
+ &#39;set_num_threads&#39;,
+ &#39;set_printoptions&#39;,
+ &#39;set_rng_state&#39;,
+ &#39;sgn&#39;,
+ &#39;short&#39;,
+ &#39;sigmoid&#39;,
+ &#39;sigmoid_&#39;,
+ &#39;sign&#39;,
+ &#39;signbit&#39;,
+ &#39;sin&#39;,
+ &#39;sin_&#39;,
+ &#39;sinc&#39;,
+ &#39;sinc_&#39;,
+ &#39;sinh&#39;,
+ &#39;sinh_&#39;,
+ &#39;slogdet&#39;,
+ &#39;smm&#39;,
+ &#39;softmax&#39;,
+ &#39;solve&#39;,
+ &#39;sort&#39;,
+ &#39;sparse&#39;,
+ &#39;sparse_coo&#39;,
+ &#39;sparse_coo_tensor&#39;,
+ &#39;split&#39;,
+ &#39;split_with_sizes&#39;,
+ &#39;spmm&#39;,
+ &#39;sqrt&#39;,
+ &#39;sqrt_&#39;,
+ &#39;square&#39;,
+ &#39;square_&#39;,
+ &#39;squeeze&#39;,
+ &#39;sspaddmm&#39;,
+ &#39;stack&#39;,
+ &#39;std&#39;,
+ &#39;std_mean&#39;,
+ &#39;stft&#39;,
+ &#39;storage&#39;,
+ &#39;strided&#39;,
+ &#39;sub&#39;,
+ &#39;subtract&#39;,
+ &#39;sum&#39;,
+ &#39;svd&#39;,
+ &#39;svd_lowrank&#39;,
+ &#39;swapaxes&#39;,
+ &#39;swapdims&#39;,
+ &#39;symeig&#39;,
+ &#39;sys&#39;,
+ &#39;t&#39;,
+ &#39;take&#39;,
+ &#39;tan&#39;,
+ &#39;tan_&#39;,
+ &#39;tanh&#39;,
+ &#39;tanh_&#39;,
+ &#39;tensor&#39;,
+ &#39;tensor_split&#39;,
+ &#39;tensordot&#39;,
+ &#39;testing&#39;,
+ &#39;textwrap&#39;,
+ &#39;threshold&#39;,
+ &#39;threshold_&#39;,
+ &#39;tile&#39;,
+ &#39;topk&#39;,
+ &#39;torch&#39;,
+ &#39;trace&#39;,
+ &#39;transpose&#39;,
+ &#39;trapz&#39;,
+ &#39;triangular_solve&#39;,
+ &#39;tril&#39;,
+ &#39;tril_indices&#39;,
+ &#39;triplet_margin_loss&#39;,
+ &#39;triu&#39;,
+ &#39;triu_indices&#39;,
+ &#39;true_divide&#39;,
+ &#39;trunc&#39;,
+ &#39;trunc_&#39;,
+ &#39;typename&#39;,
+ &#39;types&#39;,
+ &#39;uint8&#39;,
+ &#39;unbind&#39;,
+ &#39;unify_type_list&#39;,
+ &#39;unique&#39;,
+ &#39;unique_consecutive&#39;,
+ ...]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">m</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>torch.Size([10, 6])
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(tensor([[ 1.9962,  0.0996,  0.1479, -1.0129, -0.0659],
+         [-0.2024,  0.9311,  0.5858, -0.5480,  0.6899],
+         [ 1.1325,  1.1787, -0.5252,  0.4131, -0.1455],
+         [-0.5413,  1.9641, -1.2753, -0.0184,  1.5657],
+         [ 0.5589,  0.0896,  0.0702,  0.0064, -0.6095],
+         [ 0.4696, -2.1550,  0.2622,  0.6374, -0.6430],
+         [ 1.4073, -0.4629, -0.5124, -0.5942, -0.4861],
+         [-0.6663, -0.5769,  0.0107, -0.7793, -2.4083],
+         [-0.1826, -0.5537,  1.1015, -1.6887,  0.2530],
+         [ 0.1800, -0.0770,  0.5635,  0.5061, -1.5352]]),
+ tensor([[-0.8794,  0.6896, -0.5001,  0.3345,  0.0324, -0.4620],
+         [-0.1005,  0.0320, -0.8660, -0.3718, -0.2444,  0.6927],
+         [ 0.2557,  0.5111, -0.6527, -0.5666, -0.5598, -0.0506],
+         [ 0.7434, -0.8242, -0.7764, -1.7511, -1.1434,  1.4386],
+         [ 0.0441,  0.4220, -0.4058,  0.0872,  0.1689, -0.4998],
+         [ 0.0397,  0.5646,  0.3889,  1.0292,  0.6375, -1.4956],
+         [-0.3732,  0.3120, -0.1057,  0.2360,  0.2516, -0.8267],
+         [ 0.2250, -0.1463, -0.1432,  0.4105,  1.4426, -1.1975],
+         [-0.8115, -0.0779, -0.4977,  0.5414,  0.6875,  0.0378],
+         [ 0.2935,  0.7329, -0.4240,  0.4088,  0.5406, -0.9281]],
+        grad_fn=&lt;AddmmBackward&gt;))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Epoch 2
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Epoch 3
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Epoch 4
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Epoch 5
+-------------------------------
+loss: 1.846454  [    0/60000]
+loss: 1.840754  [ 6400/60000]
+loss: 1.688818  [12800/60000]
+loss: 1.605958  [19200/60000]
+loss: 1.861017  [25600/60000]
+loss: 1.867185  [32000/60000]
+loss: 1.773537  [38400/60000]
+loss: 1.907231  [44800/60000]
+loss: 1.729227  [51200/60000]
+loss: 1.645265  [57600/60000]
+Test Error: 
+ Accuracy: 46.8%, Avg loss: 0.027309 
+
+Done!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/my-nlp-journey/2021/07/16/.-Torch-Test.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/my-nlp-journey/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/my-nlp-journey/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/my-nlp-journey/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/my-nlp-journey/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/my-nlp-journey/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
